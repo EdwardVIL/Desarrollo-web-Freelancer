@@ -1,0 +1,275 @@
+:root {
+    /*paleta de colores */
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+/* HACK PARA FLEXBOX */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* TIPO DE LETRA Y TAMAÑO */
+
+body {
+    font-size: 16px; /* 1rem = 10px */
+    font-family:'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--gris) 0%, var(--blanco) 100%);
+    /* EL BACKGROUN ES PARA FONDO Y EL LINEAR ES PARA EL DEGRADADO */
+}
+/* FUENTES PARA CADA TITULO */
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2,h3 {
+    text-align: center;
+}
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+}
+/* BOTON DE CONTACTAR */
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+/* MEDIA PARA FORMA DEL BOTON, PARA QUE REGRESE Y SE ACOMODE AUTOMATICAMENTE */
+@media (min-width: 780px ) {
+    .boton{
+        width: auto;
+    }
+
+ }
+.sombra {
+    -webkit-box-shadow: -10px 6px 26px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 6px 26px -8px rgba(0,0,0,0.75);
+    box-shadow: -10px 6px 26px -8px rgba(0,0,0,0.75);
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--blanco);
+    margin-bottom: 2rem;
+    /* SE USO CSSMATIC PARA EL CODIGO DE LA SOMBRA */
+
+
+}
+/*seccion de utilidades*/
+.w-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px ) {
+    .w-100 {
+        width: auto; /*boton de enviar se va a la derecha*/
+    }
+    
+ }
+
+.flex{
+    display: flex;
+}
+.alinear {
+    justify-content: flex-end;
+}
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+.navegacion-principal {
+
+    display: flex;
+    flex-direction: column;
+
+}
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;9
+    }
+
+
+}
+ .navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+ }
+ .navegacion-principal a:hover {
+     background-color: var(--primario);
+     color:#212121;
+
+ }
+
+ .hero {
+     background-image: url(../hero.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 450px;
+     position: relative;
+     margin-bottom: 2rem;
+ }
+.contenido-hero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+ color: #ffffff;
+}
+
+.servicios, /*efecto de scroll*/
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+@media (min-width: 768px ) {
+    
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
+    }
+}
+
+.servicio { 
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    /* SE USO PARA CENTRAR LOS ICONOS EN EL FLEXBOX */
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+    /* SE USO PARA DARLE DISEÑO A LOS TITULOS DE CADA ICONO*/
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+    /* SE UTILIZO PARA LOS PARRAFOS */
+}
+
+.servicio .icono{
+
+    background-color: var(--primario);
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50% ;
+    display:flex; 
+    justify-content: center;   
+    align-items: center;
+
+    /* SE UTILIZO PARA DARLE FORMA DE UN CIRCULO Y CENTRA EL ICONO EN EL CIRCULO */
+
+}
+
+.formulario fieldset {
+    border: none;
+
+}
+
+.formulario {
+     background-color: var(--gris);
+     width: min (60rem, 100%);
+     margin: 0 auto;
+     padding: 2rem;
+     border-radius: 1rem;
+
+}
+
+.formulario legend {
+color: var(--primario);
+text-align: center;
+font-weight: 700;
+margin-bottom: 2rem;
+font-size: 1.8rem; 
+text-transform: uppercase;
+
+}
+
+@media (min-width: 768px ) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 50% 50%; /* columnas del formulario*/
+        column-gap: 1rem; /* separacion de las columnas */
+        grid-template-rows: auto auto 20rem;
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4) {  /* nth selecciona el numero si hay varias clases*/
+        grid-column: 1 / 3;
+    }
+ }
+
+.campo {
+
+margin-bottom: 1rem
+}
+
+.campo label {
+
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+
+}
+
+.campo textarea {
+    height: 20rem;
+}
+.input-text { 
+
+    width: 100%;
+    border none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.footer {
+
+text-align: center;
+}

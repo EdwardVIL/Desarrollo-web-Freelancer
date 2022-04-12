@@ -1,0 +1,124 @@
+/* 1- SE AGREGA PALETA DE COLORES QUE SE VA A UTILIZAR ":" significa que
+no existe como tal y hacerla una variable */
+:root {
+
+    --blanco: #ffffff;
+    --azul: #39cff5;
+    --gris: #9c9393;
+    --amarillo: #e9d30e;
+
+}
+
+/* 2- DARLE EL DISEÑO A TODO EL DOCUMENTO PARA ESTABLECER FUENTE PRINCIPAL*/
+html {
+font-size:62.5%;/*CON ESTA LINEA Y CON body SE REALIZA PARA QUE 1REM= 10PX*/
+box-sizing: border-box;
+}
+
+/* HACK PARA FLEXBOX */
+*, *:before, *:after {
+    box-sizing: inherit;
+     }
+
+body {
+font-size:16px;/*CON ESTA LINEA Y CON html SE REALIZA PARA QUE 1REM= 10PX*/
+font-family:'Krub', sans-serif; /* REGLA PARA LA FUENTE DE GOOGLE FONTS*/
+background-image: linear-gradient(to top, #ffffff 10%, #b5ddf3 100%);
+/*LINEAR SE UTILIZA PARA DEGRADADO */
+}
+
+h1{
+    font-size: 3.8rem;
+    text-align: center; /* SE ALINIO EL TITULO*/
+}
+
+h2 {
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+    
+    
+
+} 
+
+.titulo span {
+    font-size: 2rem; /* EL SPAN SE UTILIZO PARA SEPARA Y DARLE DIEÑO
+    AL FREELANCER*/
+}
+.contenedor {
+
+    max-width: 120rem;
+    margin: 0 auto; /*se centro la barra de navegacion*/ 
+
+}
+.nav-bg {
+    background-color: var(--azul); /* se agrego la clase y el color*/
+}
+.navegacion-principal {
+
+     
+    display: flex; /*ABRE LA OPCION DE FLEXBOX Y LUEGO SE AJUSTA EL TEXTO CON
+    JUSTIFY*/ 
+    flex-direction: column;  
+    justify-content: space-between;
+
+}
+@media (min-width:768px) {
+    .navegacion-principal {
+        flex-direction: row;
+
+    }
+}
+
+    
+.navegacion-principal a {
+    padding: 1rem; /*EL PADDING ENGORDA EL ELEMENTO, LO HACE DESDE ADENTRO */
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none; /*QUITA ELA LINEA QUE TIENE EL TEXTO DE LA BARRA DE NAVEGACION */
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.navegacion-principal a:hover { 
+    background-color: var(--amarillo);
+    color: black;
+}
+
+.hero { /* SE USO UNA CLASE Y SE AGREGO LA IMAGEN DE FONDO*/
+    background-image: url(../hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 418px;
+    position: relative;
+}
+
+.contenedor-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7 ); /* PARA QUE EL HIJO TENGO POSICION 
+    ABSOLUTA EL PADRE DEBE TENER POSICION RELATIVA, EL RGBA DA TRANSPARENCIA
+    Y EL WIDTH Y HEIGHT ES PARA CUBRIR TODA LA ZONA CON EL COLOR RGBA*/
+    width: 100%;
+    height: 100%; 
+
+    display:flex; /* PARA ALINEAR  Y CENTRAR TODO*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contenedor-hero h2,
+.contenedor-hero p, 
+.contenedor-hero a{
+    color: var(--blanco);
+
+    
+
+}
